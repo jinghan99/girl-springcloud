@@ -1,7 +1,8 @@
-package com.yf.product_service.service.impl;
+package com.yf.product.service.impl;
 
-import com.yf.product_service.entiy.Product;
-import com.yf.product_service.service.ProductService;
+import com.yf.product.entiy.Product;
+import com.yf.product.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,13 +10,13 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * @Package com.yf.product_service.service.impl
+ * @Package com.yf.product.service.impl
  * @Description: TODO
  * @author: jingh
  * @date 2018/10/9 17:32
  */
+@Service("productService")
 public class ProductServiceImpl implements ProductService {
-
 
     private static final HashMap daoMap = new HashMap();
 

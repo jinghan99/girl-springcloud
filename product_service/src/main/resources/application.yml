@@ -1,13 +1,11 @@
-
 server:
-   port: 8771
+   port: 8772
 #   指定服务注册中心
 eureka:
-  instance:
-      hostname: localhost
   client:
     serviceUrl:
-        defaultZone: http://${eureka.instance.hostname}:${server.port}/api/
+        defaultZone: http://localhost:8761/eureka/
+# 服务名称
 spring:
   application:
     name: product-service

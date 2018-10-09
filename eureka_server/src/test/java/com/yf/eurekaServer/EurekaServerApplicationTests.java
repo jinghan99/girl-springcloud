@@ -1,4 +1,4 @@
-package com.yf.eureka_server;
+package com.yf.eurekaServer;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
