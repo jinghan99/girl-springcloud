@@ -31,11 +31,11 @@ public class ProductServiceImpl implements ProductService {
         Product p5 = new Product("6","锅","2","12");
 
         daoMap.put(p.getId(),p);
-        daoMap.put(p1.getId(),p);
-        daoMap.put(p2.getId(),p);
-        daoMap.put(p3.getId(),p);
-        daoMap.put(p4.getId(),p);
-        daoMap.put(p5.getId(),p);
+        daoMap.put(p1.getId(),p1);
+        daoMap.put(p2.getId(),p2);
+        daoMap.put(p3.getId(),p3);
+        daoMap.put(p4.getId(),p4);
+        daoMap.put(p5.getId(),p5);
     }
 
     @Override

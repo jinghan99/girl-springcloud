@@ -21,6 +21,7 @@
     <modules>
         <module>eureka_server</module>
         <module>product_service</module>
+		<module>order_service</module>
     </modules>
 
 	<properties>
@@ -40,6 +41,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

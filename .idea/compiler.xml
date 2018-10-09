@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
         <module name="eureka_server" />
+        <module name="order_service" />
         <module name="product_service" />
         <module name="test-demo" />
       </profile>
@@ -17,6 +18,7 @@
       <module name="eureka_server" target="1.8" />
       <module name="girl-cloud" target="1.8" />
       <module name="girl-springcloud" target="1.8" />
+      <module name="order_service" target="1.8" />
       <module name="product_service" target="1.8" />
       <module name="test-demo" target="1.8" />
       <module name="test-demo (1)" target="1.8" />

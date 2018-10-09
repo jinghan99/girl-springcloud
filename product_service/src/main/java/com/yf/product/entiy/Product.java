@@ -10,8 +10,6 @@ import java.io.Serializable;
  */
 public class Product implements Serializable {
 
-
-
     private String id;
 
     private String name;
@@ -19,6 +17,9 @@ public class Product implements Serializable {
     private String price;
 
     private String store;
+
+    private String info;
+
 
     public Product(String id, String name, String price, String store) {
         this.id = id;
@@ -57,5 +58,13 @@ public class Product implements Serializable {
 
     public void setStore(String store) {
         this.store = store;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 }
