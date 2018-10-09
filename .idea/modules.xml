@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/eureka_server/eureka_server.iml" filepath="$PROJECT_DIR$/eureka_server/eureka_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/girl-springcloud.iml" filepath="$PROJECT_DIR$/girl-springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product_service/product_service.iml" filepath="$PROJECT_DIR$/product_service/product_service.iml" />
       <module fileurl="file://$PROJECT_DIR$/test-demo/test-demo.iml" filepath="$PROJECT_DIR$/test-demo/test-demo.iml" />
     </modules>
   </component>
