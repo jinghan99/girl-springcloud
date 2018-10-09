@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
         <module name="eureka_server" />
-        <module name="girl-springcloud" />
         <module name="product_service" />
         <module name="test-demo" />
       </profile>
