@@ -1,12 +1,12 @@
-package com.yf.girlcloud;
+package com.test.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GirlCloudApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GirlCloudApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 }
