@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/girl-cloud/girl-cloud.iml" filepath="$PROJECT_DIR$/girl-cloud/girl-cloud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/girl-springcloud.iml" filepath="$PROJECT_DIR$/.idea/girl-springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/girl-springcloud.iml" filepath="$PROJECT_DIR$/girl-springcloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/test-demo/test-demo.iml" filepath="$PROJECT_DIR$/test-demo/test-demo.iml" />
     </modules>
   </component>

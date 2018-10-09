@@ -7,12 +7,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo" />
-        <module name="girl-cloud" />
+        <module name="girl-springcloud" />
+        <module name="test-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
       <module name="girl-cloud" target="1.8" />
+      <module name="girl-springcloud" target="1.8" />
+      <module name="test-demo" target="1.8" />
+      <module name="test-demo (1)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
