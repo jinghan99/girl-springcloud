@@ -46,7 +46,6 @@ feign:
 #        timeout:
 #          enabled: false
 
-#execution.isolation.thread.timeoutInMilliseconds=4000
 
 #设置超时时间
 hystrix:
