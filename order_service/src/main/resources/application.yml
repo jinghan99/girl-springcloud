@@ -1,22 +1,9 @@
 server:
-   port: 8781
-#   指定服务注册中心
-eureka:
-  client:
-    serviceUrl:
-        defaultZone: http://localhost:8761/eureka/
+  port: 8781
 
-feign:
-  hystrix:
-    enabled: true #开启feign支持hystrix  (注意，一定要开启，旧版本默认支持，新版本默认关闭)
-  client:
-    config:
-      feignName:
-        connectTimeout: 5000
-        readTimeout: 5000 #超时时间
 spring:
   application:
-      name: order-service
+    name: order-service
   redis:
     database: 0
     host: 106.12.101.177
@@ -29,3 +16,50 @@ spring:
         max-wait: -1s      # 连接池最大阻塞等待时间（使用负值表示没有限制）
         max-idle: 10      # 连接池中的最大空闲连接
         min-idle: 5       # 连接池中的最小空闲连接
+#   指定服务注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#自定义负载均衡策略
+#product-service:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+
+#修改调用超时时间
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+        connectTimeout: 2000
+        readTimeout: 1000
+
+#把hystrix超时时间禁用
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        timeout:
+#          enabled: false
+
+#execution.isolation.thread.timeoutInMilliseconds=4000
+
+#设置超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000
+
+#暴露全部的监控信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

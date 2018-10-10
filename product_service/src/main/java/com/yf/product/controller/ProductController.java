@@ -35,14 +35,6 @@ public class ProductController {
 
     @GetMapping("/getById")
     public Product getById(String id){
-
-        try {
-            TimeUnit.SECONDS.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
         Product product = productService.getById(id);
         Product product1 = new Product();
         BeanUtils.copyProperties(product,product1);

@@ -1,5 +1,5 @@
 server:
-   port: 8771
+   port: 8772
 #   指定服务注册中心
 eureka:
   client:
