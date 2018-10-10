@@ -28,6 +28,10 @@ public class Product implements Serializable {
         this.store = store;
     }
 
+    public Product() {
+
+    }
+
     public String getId() {
         return id;
     }

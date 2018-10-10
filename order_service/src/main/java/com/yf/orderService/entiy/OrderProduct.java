@@ -17,13 +17,13 @@ public class OrderProduct implements Serializable {
 
     private String productId;
 
-    private int productNum;
+    private String productNname;
 
-    public OrderProduct(String orderNo, Date createTime, String productId, int productNum) {
+    public OrderProduct(String orderNo, Date createTime, String productId, String productNname) {
         OrderNo = orderNo;
         this.createTime = createTime;
         this.productId = productId;
-        this.productNum = productNum;
+        this.productNname = productNname;
     }
 
     public String getOrderNo() {
@@ -50,11 +50,11 @@ public class OrderProduct implements Serializable {
         this.productId = productId;
     }
 
-    public int getProductNum() {
-        return productNum;
+    public String getProductNname() {
+        return productNname;
     }
 
-    public void setProductNum(int productNum) {
-        this.productNum = productNum;
+    public void setProductNname(String productNname) {
+        this.productNname = productNname;
     }
 }

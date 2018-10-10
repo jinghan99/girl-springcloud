@@ -2,6 +2,7 @@ package com.yf.product.controller;
 
 import com.yf.product.entiy.Product;
 import com.yf.product.service.ProductService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,7 +35,9 @@ public class ProductController {
     @GetMapping("/getById")
     public Product getById(String id){
         Product product = productService.getById(id);
-        product.setInfo("端口来源于 - ："+port);
-        return product;
+        Product product1 = new Product();
+        BeanUtils.copyProperties(product,product1);
+        product1.setName(product.getName()+" 端口来源于 - ："+port);
+        return product1;
     }
 }
