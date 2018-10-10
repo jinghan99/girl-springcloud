@@ -10,7 +10,7 @@
         <module name="eureka_server" />
         <module name="order_service" />
         <module name="product_service" />
-        <module name="test-demo" />
+        <module name="user_service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +22,7 @@
       <module name="product_service" target="1.8" />
       <module name="test-demo" target="1.8" />
       <module name="test-demo (1)" target="1.8" />
+      <module name="user_service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

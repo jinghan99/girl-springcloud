@@ -1,5 +1,6 @@
 package com.yf.orderService.service;
 
+import com.yf.orderService.fallback.ProductClientFallBack;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date 2018/10/10 14:56
  */
 
-@FeignClient("product-service")
+@FeignClient(value = "product-service",fallback = ProductClientFallBack.class)
 public interface ProductClient {
 
     @GetMapping("api/v1/product/getById")

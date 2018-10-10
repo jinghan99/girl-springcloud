@@ -22,6 +22,7 @@
         <module>eureka_server</module>
         <module>product_service</module>
 		<module>order_service</module>
+		<module>user_service</module>
     </modules>
 
 	<properties>
