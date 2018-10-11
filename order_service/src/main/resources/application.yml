@@ -16,6 +16,14 @@ spring:
         max-wait: -1s      # 连接池最大阻塞等待时间（使用负值表示没有限制）
         max-idle: 10      # 连接池中的最大空闲连接
         min-idle: 5       # 连接池中的最小空闲连接
+  #zipkin服务所在地址
+  zipkin:
+    base-url: http://106.12.101.177:9411/   #后期 部署改为内网ip
+#配置采样百分比,开发环境可以设置为1，表示全部，生产就用默认
+  sleuth:
+    sampler:
+      probability: 1
+
 #   指定服务注册中心
 eureka:
   client:
@@ -36,7 +44,7 @@ feign:
     config:
       default:
         connectTimeout: 2000
-        readTimeout: 1000
+        readTimeout: 2000
 
 #把hystrix超时时间禁用
 #hystrix:
@@ -54,7 +62,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 1000
+            timeoutInMilliseconds: 2000
 
 #暴露全部的监控信息
 management:

@@ -9,3 +9,9 @@ eureka:
 spring:
   application:
     name: product-service
+  zipkin:
+    base-url: http://106.12.101.177:9411/   #后期 部署改为内网ip
+    #配置采样百分比,开发环境可以设置为1，表示全部，生产就用默认
+    sleuth:
+      sampler:
+        probability: 1

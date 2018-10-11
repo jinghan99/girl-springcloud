@@ -22,4 +22,4 @@ zuul:
 
   ignored-patterns: /*-service/**     #外网隔离 服务间 内网连接
 #  http 请求头 取消过滤
-  sensitive-headers: null
+  sensitive-headers:
