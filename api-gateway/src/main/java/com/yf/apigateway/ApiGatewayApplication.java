@@ -10,6 +10,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
  * @date: 2018/10/11 15:15
  *
  * TODO  nginx + lvs  负载均衡  2个 网关
+ *
+ * http://localhost:9000/gateway/order/api/v1/order/save?orderId=1&productId=3&token=12313
  */
 @SpringBootApplication
 @EnableZuulProxy
