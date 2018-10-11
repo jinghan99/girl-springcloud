@@ -15,6 +15,8 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * @Description: 接口限流
  * @author: jingh
  * @date 2018/10/11 17:36
+ *
+ * guaga 高并发 限流
  */
 @Component
 public class OrderRateLimitFilter extends ZuulFilter{
