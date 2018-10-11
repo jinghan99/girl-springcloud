@@ -8,6 +8,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
  * @EnableZuulProxy zuul 网关开启
  * @auther: jinghan
  * @date: 2018/10/11 15:15
+ *
+ * nginx + lvs  负载均衡  2个 网关
  */
 @SpringBootApplication
 @EnableZuulProxy
