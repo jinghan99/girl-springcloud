@@ -34,6 +34,13 @@ public class OrderProductController {
     @HystrixCommand(fallbackMethod = "saveFallback")
     public Object save(String orderId, String productId, HttpServletRequest request){
 
+        String token = request.getHeader("token");
+
+        String cookie = request.getHeader("cookie");
+
+        System.out.println("token ="+token);
+
+        System.out.println("cookie ="+cookie);
         Map<String, Object> map = new HashMap<>();
         map.put("code", "0");
         map.put("msg", "抢购成功");
