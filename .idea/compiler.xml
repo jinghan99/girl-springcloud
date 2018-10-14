@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
+        <module name="config-server" />
         <module name="demo" />
         <module name="eureka_server" />
         <module name="order_service" />
@@ -16,6 +17,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="1.8" />
+      <module name="config-server" target="1.8" />
+      <module name="config-service" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="eureka_server" target="1.8" />
       <module name="girl-cloud" target="1.8" />

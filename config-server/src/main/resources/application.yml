@@ -1,0 +1,24 @@
+server:
+  port: 9100
+
+spring:
+  application:
+    name: config-server
+    #git配置
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/jinghan94/config-server-cloud
+          username: jinghan94@126.com
+          password: jinghan940115
+          #超时时间
+          timeout: 5
+      #分支
+      default-label: master
+#   指定服务注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
