@@ -15,7 +15,7 @@ spring:
           #超时时间
           timeout: 5
       #分支
-      default-label: master
+          default-label: master
 #   指定服务注册中心
 eureka:
   client:
