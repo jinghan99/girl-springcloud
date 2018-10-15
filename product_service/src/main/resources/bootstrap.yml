@@ -1,0 +1,19 @@
+#   指定服务注册中心
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+# 服务名称
+spring:
+  application:
+    name: product-service
+    #指定从哪个配置中心读取
+  cloud:
+    config:
+      discovery:
+        service-id: CONFIG-SERVER
+        enabled: true
+      profile: test #读取 Git 服务器 config server  product-service-test.yml
+      #建议用lable去区分环境，默认是lable是master分支
+      #label: test
+
