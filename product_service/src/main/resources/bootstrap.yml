@@ -11,9 +11,21 @@ spring:
   cloud:
     config:
       discovery:
-        service-id: CONFIG-SERVER
+        service-id: config-server
         enabled: true
       profile: test #读取 Git 服务器 config server  product-service-test.yml
       #建议用lable去区分环境，默认是lable是master分支
       #label: test
+  rabbitmq:
+    host: 106.12.101.177
+    port: 5672
+    username: guest
+    password: guest
+
+#暴露全部的监控信息
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"    #发送Post请求http://localhost:8763/actuator/bus-refresh/。
 
