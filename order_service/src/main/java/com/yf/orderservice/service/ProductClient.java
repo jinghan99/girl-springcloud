@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @Package com.yf.orderservice.service
  * @Description: TODO
  * @author: jingh
  * @date 2018/10/10 14:56

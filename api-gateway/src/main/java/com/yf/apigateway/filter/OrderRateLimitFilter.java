@@ -53,10 +53,10 @@ public class OrderRateLimitFilter extends ZuulFilter{
      */
     @Override
     public boolean shouldFilter() {
-
         RequestContext currentContext = RequestContext.getCurrentContext();
         HttpServletRequest request = currentContext.getRequest();
 
+        //TODO 后期 数据库配置
         if("/gateway/order/api/v1/order/save".equalsIgnoreCase(request.getRequestURI())){
             return true;
         }

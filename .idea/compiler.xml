@@ -11,6 +11,7 @@
         <module name="demo" />
         <module name="eureka_server" />
         <module name="order_service" />
+        <module name="product_service" />
         <module name="user_service" />
       </profile>
     </annotationProcessing>
