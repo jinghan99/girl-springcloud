@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>girl-springcloud</name>
+	<name>girl-springCloud</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -19,10 +19,10 @@
 	</parent>
 
     <modules>
-        <module>eureka_server</module>
-        <module>product_service</module>
-		<module>order_service</module>
-		<module>user_service</module>
+        <module>eureka-server</module>
+        <module>product-service</module>
+		<module>order-service</module>
+		<module>user-service</module>
     </modules>
 
 	<properties>
