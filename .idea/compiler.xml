@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="common" />
+        <module name="common-service" />
         <module name="config-server" />
         <module name="demo" />
         <module name="eureka-server" />
