@@ -9,7 +9,7 @@ eureka:
 
 spring:
   profiles:
-    active: dev
+    active: dev #开发环境
   application:
     name: common-service
   redis:
