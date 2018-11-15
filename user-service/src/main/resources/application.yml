@@ -8,4 +8,4 @@ eureka:
 # 服务名称
 spring:
   application:
-    name: userservice-service
+    name: user-service

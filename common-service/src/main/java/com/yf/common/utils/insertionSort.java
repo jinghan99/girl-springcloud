@@ -77,7 +77,11 @@ public class insertionSort {
         int N = 10000;
         Integer[] arr = SortTestHelper.generateRandomArray(N, 0, 234131);
         Integer[] arr2 = Arrays.copyOf(arr, arr.length);
-        SortTestHelper.testSort("com.yf.common.utils.insertionSort", "optimizationSort",arr);
+        SortTestHelper.testSort("com.yf.common.utils.insertionSort", "sortTest",arr);
         SortTestHelper.testSort("com.yf.common.utils.insertionSort", "sort",arr2);
+
+
     }
+
+
 }
