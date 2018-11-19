@@ -9,3 +9,8 @@ eureka:
 spring:
   application:
     name: user-service
+  profiles:
+    active: prd
+jwt:
+  tokenHeader: token
+  tokenHead: Bearer

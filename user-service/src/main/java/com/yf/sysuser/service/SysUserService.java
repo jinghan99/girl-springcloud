@@ -64,6 +64,9 @@ public interface SysUserService {
 	 */
 	Set<String> listUserRoles(Long userId);
 
+
+
+
 	/**
 	 * 用户修改密码
 	 * @param user

@@ -161,6 +161,7 @@ public class SysUserServiceImpl implements SysUserService {
 		return rolesSet;
 	}
 
+
 	/**
 	 * 用户修改密码
 	 * @param user
