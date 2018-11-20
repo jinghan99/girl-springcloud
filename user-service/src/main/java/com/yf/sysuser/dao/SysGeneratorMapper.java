@@ -2,10 +2,10 @@ package com.yf.sysuser.dao;
 
 import java.util.List;
 
-import com.yf.common.entiy.Page;
-import com.yf.common.entiy.Query;
 import com.yf.sysuser.entity.ColumnEntity;
 import com.yf.sysuser.entity.TableEntity;
+import com.yf.utils.entiy.Page;
+import com.yf.utils.entiy.Query;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

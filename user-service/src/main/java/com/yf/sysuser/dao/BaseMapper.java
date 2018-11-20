@@ -2,8 +2,9 @@ package com.yf.sysuser.dao;
 
 import java.util.List;
 
-import com.yf.common.entiy.Page;
-import com.yf.common.entiy.Query;
+import com.yf.utils.entiy.Page;
+import com.yf.utils.entiy.Query;
+
 
 /**
  * 基础dao

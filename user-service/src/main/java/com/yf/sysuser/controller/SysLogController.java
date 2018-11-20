@@ -2,11 +2,11 @@ package com.yf.sysuser.controller;
 
 import java.util.Map;
 
-import com.yf.common.annotation.SysLog;
-import com.yf.common.entiy.Page;
-import com.yf.common.entiy.R;
 import com.yf.sysuser.entity.SysLogEntity;
 import com.yf.sysuser.service.SysLogService;
+import com.yf.utils.annotation.SysLog;
+import com.yf.utils.entiy.Page;
+import com.yf.utils.entiy.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

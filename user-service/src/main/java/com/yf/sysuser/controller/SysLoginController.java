@@ -1,12 +1,7 @@
 package com.yf.sysuser.controller;
 
-import com.yf.common.annotation.SysLog;
-import com.yf.common.utils.MD5Utils;
-import com.yf.sysuser.properties.GlobalProperties;
 import com.yf.sysuser.service.SysUserService;
-import org.apache.commons.lang.StringUtils;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.*;
+import com.yf.utils.annotation.SysLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +19,7 @@ public class SysLoginController extends AbstractController {
 	@Autowired
 	private SysUserService sysUserService;
 
-	@Autowired
-	private GlobalProperties globalProperties;
+
 
 	/**
 	 * 跳转登录页面

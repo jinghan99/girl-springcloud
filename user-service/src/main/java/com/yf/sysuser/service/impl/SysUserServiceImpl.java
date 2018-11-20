@@ -1,14 +1,14 @@
 package com.yf.sysuser.service.impl;
 
-import com.yf.common.constant.SystemConstant;
-import com.yf.common.entiy.Page;
-import com.yf.common.entiy.Query;
-import com.yf.common.entiy.R;
-import com.yf.common.utils.CommonUtils;
-import com.yf.common.utils.MD5Utils;
 import com.yf.sysuser.dao.*;
 import com.yf.sysuser.entity.SysUserEntity;
 import com.yf.sysuser.service.SysUserService;
+import com.yf.utils.common.CommonUtils;
+import com.yf.utils.common.MD5Utils;
+import com.yf.utils.constant.SystemConstant;
+import com.yf.utils.entiy.Page;
+import com.yf.utils.entiy.Query;
+import com.yf.utils.entiy.R;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

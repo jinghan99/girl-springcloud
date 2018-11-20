@@ -1,12 +1,10 @@
 package com.yf.sysuser.factory;
 
-import com.yf.common.jwt.JWTInfo;
 import com.yf.sysuser.entity.SysUserEntity;
+import com.yf.utils.jwt.JWTInfo;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 

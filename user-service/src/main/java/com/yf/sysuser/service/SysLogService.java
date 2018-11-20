@@ -1,9 +1,9 @@
 package com.yf.sysuser.service;
 
 
-import com.yf.common.entiy.Page;
-import com.yf.common.entiy.R;
 import com.yf.sysuser.entity.SysLogEntity;
+import com.yf.utils.entiy.Page;
+import com.yf.utils.entiy.R;
 
 import java.util.Map;
 

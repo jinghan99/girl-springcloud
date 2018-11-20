@@ -1,15 +1,15 @@
 package com.yf.sysuser.service.impl;
 
-import com.yf.common.entiy.Page;
-import com.yf.common.entiy.Query;
-import com.yf.common.entiy.R;
-import com.yf.common.utils.CommonUtils;
 import com.yf.sysuser.dao.SysRoleMapper;
 import com.yf.sysuser.dao.SysRoleMenuMapper;
 import com.yf.sysuser.dao.SysRoleOrgMapper;
 import com.yf.sysuser.dao.SysUserRoleMapper;
 import com.yf.sysuser.entity.SysRoleEntity;
 import com.yf.sysuser.service.SysRoleService;
+import com.yf.utils.common.CommonUtils;
+import com.yf.utils.entiy.Page;
+import com.yf.utils.entiy.Query;
+import com.yf.utils.entiy.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

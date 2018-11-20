@@ -1,12 +1,12 @@
 package com.yf.sysuser.controller;
 
+import com.yf.utils.common.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.yf.common.utils.WebUtils;
 import javax.servlet.http.HttpSession;
 
 /**

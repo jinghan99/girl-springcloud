@@ -5,10 +5,10 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import com.yf.common.annotation.SysLog;
-import com.yf.common.entiy.R;
 import com.yf.sysuser.entity.SysMenuEntity;
 import com.yf.sysuser.service.SysMenuService;
+import com.yf.utils.annotation.SysLog;
+import com.yf.utils.entiy.R;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

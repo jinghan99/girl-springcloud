@@ -1,7 +1,7 @@
 package com.yf.sysuser.dao;
 
-import com.yf.common.entiy.Query;
 import com.yf.sysuser.entity.SysAreaEntity;
+import com.yf.utils.entiy.Query;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

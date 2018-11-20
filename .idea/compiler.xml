@@ -13,6 +13,7 @@
         <module name="demo" />
         <module name="eureka-server" />
         <module name="eureka_server" />
+        <module name="girl-utils" />
         <module name="order-service" />
         <module name="order_service" />
         <module name="product-service" />
@@ -32,6 +33,7 @@
       <module name="eureka_server" target="1.8" />
       <module name="girl-cloud" target="1.8" />
       <module name="girl-springcloud" target="1.8" />
+      <module name="girl-utils" target="1.8" />
       <module name="order-service" target="1.8" />
       <module name="order_service" target="1.8" />
       <module name="product-service" target="1.8" />

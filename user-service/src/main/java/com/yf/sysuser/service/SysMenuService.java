@@ -1,8 +1,8 @@
 package com.yf.sysuser.service;
 
 
-import com.yf.common.entiy.R;
 import com.yf.sysuser.entity.SysMenuEntity;
+import com.yf.utils.entiy.R;
 
 import java.util.List;
 import java.util.Map;

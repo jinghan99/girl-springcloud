@@ -1,12 +1,12 @@
 package com.yf.sysuser.service.impl;
 
-import com.yf.common.entiy.Page;
-import com.yf.common.entiy.Query;
-import com.yf.common.entiy.R;
-import com.yf.common.utils.CommonUtils;
 import com.yf.sysuser.dao.SysLogMapper;
 import com.yf.sysuser.entity.SysLogEntity;
 import com.yf.sysuser.service.SysLogService;
+import com.yf.utils.common.CommonUtils;
+import com.yf.utils.entiy.Page;
+import com.yf.utils.entiy.Query;
+import com.yf.utils.entiy.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

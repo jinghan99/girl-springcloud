@@ -1,12 +1,12 @@
 package com.yf.sysuser.service.impl;
 
-import com.yf.common.constant.MsgConstant;
-import com.yf.common.entiy.R;
-import com.yf.common.utils.CommonUtils;
 import com.yf.sysuser.dao.SysOrgMapper;
 import com.yf.sysuser.dao.SysRoleOrgMapper;
 import com.yf.sysuser.entity.SysOrgEntity;
 import com.yf.sysuser.service.SysOrgService;
+import com.yf.utils.common.CommonUtils;
+import com.yf.utils.constant.MsgConstant;
+import com.yf.utils.entiy.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

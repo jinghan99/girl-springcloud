@@ -1,7 +1,8 @@
 package com.yf.sysuser.entity;
 
 
-import com.yf.common.utils.CommonUtils;
+
+import com.yf.utils.common.CommonUtils;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

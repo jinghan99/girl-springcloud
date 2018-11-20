@@ -2,8 +2,8 @@ package com.yf.sysuser.dao;
 
 import java.util.List;
 
-import com.yf.common.entiy.Query;
 import com.yf.sysuser.entity.SysUserEntity;
+import com.yf.utils.entiy.Query;
 import org.apache.ibatis.annotations.Mapper;
 
 

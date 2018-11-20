@@ -1,5 +1,5 @@
 server:
-   port: 8791
+   port: 8796
 #   指定服务注册中心
 eureka:
   client:
@@ -9,8 +9,15 @@ eureka:
 spring:
   application:
     name: user-service
+  # 环境 sit:集成测试环境|pre:预生产环境|prd:生成环境
   profiles:
-    active: prd
+    active: dev
+
+
 jwt:
-  tokenHeader: token
+  header: token
   tokenHead: Bearer
+# Mybatis配置
+mybatis:
+  configLocation: classpath:mybatis.xml
+  mapper-locations: classpath*:com/yf/**/mapper/*.xml
