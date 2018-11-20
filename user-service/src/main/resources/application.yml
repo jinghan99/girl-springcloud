@@ -20,4 +20,5 @@ jwt:
 # Mybatis配置
 mybatis:
   configLocation: classpath:mybatis.xml
-  mapper-locations: classpath*:com/yf/**/mapper/*.xml
+  mapper-locations: classpath*:com/yf/**/mapper/*Mapper.xml
+

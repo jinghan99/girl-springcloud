@@ -18,6 +18,8 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class JWTHelper {
 
+    private static final int EXPIRE = 30*60;
+
     //生成签名的时候使用的秘钥secret,这个方法本地封装了的，一般可以从本地配置文件中读取，切记这个秘钥不能外露哦。
     // 它就是你服务端的私钥，在任何场景都不应该流露出去。一旦客户端得知这个secret, 那就意味着客户端是可以自我签发jwt了。
     private static final String JWT_SECRET = "ljg_LJG-qazedc-123";
@@ -49,8 +51,11 @@ public class JWTHelper {
      * @return
      * @throws Exception
      */
-    public static String generateToken(JWTInfo jwtInfo, int expire) throws Exception {
-        String compactJws = Jwts.builder()
+    public static String generateToken(JWTInfo jwtInfo, int expire){
+        if(expire == 0){
+            expire = EXPIRE;
+        }
+        String token = Jwts.builder()
                 .setSubject(jwtInfo.getUsername())
                 .claim(BizConstant.JWT_KEY_USER_ID.getValue(), jwtInfo.getUserId())
                 .claim(BizConstant.JWT_KEY_NAME.getValue(), jwtInfo.getUsername())
@@ -58,7 +63,7 @@ public class JWTHelper {
                 .setExpiration(DateTime.now().plusSeconds(expire).toDate())
                 .signWith(signatureAlgorithm, generalKey())
                 .compact();
-        return compactJws;
+        return token;
     }
 
 
@@ -68,7 +73,7 @@ public class JWTHelper {
      * @return
      * @throws Exception
      */
-    public static Jws<Claims> parserToken(String token) throws Exception {
+    public static Jws<Claims> parserToken(String token){
         Jws<Claims> claimsJws = Jwts.parser().setSigningKey(generalKey()).parseClaimsJws(token);
         return claimsJws;
     }
@@ -90,7 +95,7 @@ public class JWTHelper {
 
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         String token = generateToken(new JWTInfo("jinghan","123","admin"), 123);
 
         System.out.println("token: "+token);

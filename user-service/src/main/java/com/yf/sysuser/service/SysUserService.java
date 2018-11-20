@@ -15,12 +15,18 @@ import java.util.Set;
  */
 public interface SysUserService {
 
+
+
+
 	/**
 	 * 分页查询用户列表
 	 * @param params
 	 * @return
 	 */
 	Page<SysUserEntity> listUser(Map<String, Object> params);
+
+
+	String  login(String username, String password);
 
 	/**
 	 * 新增用户
