@@ -1,7 +1,7 @@
 package com.yf.sysuser.entity;
 
 /**
- * @Package com.yf.sysuser.entiy
+ * @Package com.yf.sysuser.entity
  * @Description: TODO
  * @author: jingh
  * @date 2018/10/11 15:04

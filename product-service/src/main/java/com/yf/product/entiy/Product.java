@@ -3,7 +3,7 @@ package com.yf.product.entiy;
 import java.io.Serializable;
 
 /**
- * @Package com.yf.product.entiy
+ * @Package com.yf.product.entity
  * @Description: TODO
  * @author: jingh
  * @date 2018/10/9 17:28

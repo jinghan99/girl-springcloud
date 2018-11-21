@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
+        <module name="auth-service" />
         <module name="common" />
         <module name="common-service" />
         <module name="config-server" />
@@ -24,6 +25,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-gateway" target="1.8" />
+      <module name="auth-service" target="1.8" />
       <module name="common" target="1.8" />
       <module name="common-service" target="1.8" />
       <module name="config-server" target="1.8" />
@@ -31,6 +33,7 @@
       <module name="demo" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="eureka_server" target="1.8" />
+      <module name="girl-auth" target="1.8" />
       <module name="girl-cloud" target="1.8" />
       <module name="girl-springcloud" target="1.8" />
       <module name="girl-utils" target="1.8" />

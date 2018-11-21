@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @Package com.yf.orderservice.entiy
+ * @Package com.yf.orderservice.entity
  * @Description: TODO
  * @author: jingh
  * @date 2018/10/9 23:11

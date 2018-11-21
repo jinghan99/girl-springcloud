@@ -3,9 +3,11 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api-gateway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/auth-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/girl-auth" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girl-utils" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/order-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/product-service" charset="UTF-8" />
