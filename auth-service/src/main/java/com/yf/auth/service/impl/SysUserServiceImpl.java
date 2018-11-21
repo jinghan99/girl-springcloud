@@ -4,7 +4,7 @@ import com.yf.auth.dao.SysMenuMapper;
 import com.yf.auth.dao.SysRoleMapper;
 import com.yf.auth.dao.SysUserMapper;
 import com.yf.auth.dao.SysUserRoleMapper;
-import com.yf.auth.entiy.SysUserEntity;
+import com.yf.auth.entity.SysUserEntity;
 import com.yf.auth.service.SysUserService;
 import com.yf.utils.common.CommonUtils;
 import com.yf.utils.common.MD5Utils;

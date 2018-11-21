@@ -1,8 +1,7 @@
 package com.yf.auth.controller;
 
-import com.yf.auth.entiy.SysUserEntity;
+import com.yf.auth.entity.SysUserEntity;
 import com.yf.auth.service.SysUserService;
-import com.yf.utils.entiy.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

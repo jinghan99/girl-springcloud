@@ -2,7 +2,7 @@ package com.yf.auth.service.impl;
 
 import com.yf.auth.dao.SysOrgMapper;
 import com.yf.auth.dao.SysRoleOrgMapper;
-import com.yf.auth.entiy.SysOrgEntity;
+import com.yf.auth.entity.SysOrgEntity;
 import com.yf.auth.service.SysOrgService;
 import com.yf.utils.common.CommonUtils;
 import com.yf.utils.constant.MsgConstant;

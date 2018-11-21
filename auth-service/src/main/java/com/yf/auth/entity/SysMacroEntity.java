@@ -1,4 +1,4 @@
-package com.yf.auth.entiy;
+package com.yf.auth.entity;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

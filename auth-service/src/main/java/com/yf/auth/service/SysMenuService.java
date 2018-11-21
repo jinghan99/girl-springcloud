@@ -1,7 +1,7 @@
 package com.yf.auth.service;
 
 
-import com.yf.auth.entiy.SysMenuEntity;
+import com.yf.auth.entity.SysMenuEntity;
 import com.yf.utils.entiy.R;
 
 import java.util.List;

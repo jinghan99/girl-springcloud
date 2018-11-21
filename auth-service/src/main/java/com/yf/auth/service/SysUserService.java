@@ -1,7 +1,7 @@
 package com.yf.auth.service;
 
 
-import com.yf.auth.entiy.SysUserEntity;
+import com.yf.auth.entity.SysUserEntity;
 import com.yf.utils.entiy.Page;
 import com.yf.utils.entiy.R;
 

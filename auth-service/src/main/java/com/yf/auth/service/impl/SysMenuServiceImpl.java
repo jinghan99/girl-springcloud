@@ -3,7 +3,7 @@ package com.yf.auth.service.impl;
 import com.yf.auth.dao.SysMenuMapper;
 import com.yf.auth.dao.SysRoleMenuMapper;
 import com.yf.auth.dao.SysUserMapper;
-import com.yf.auth.entiy.SysMenuEntity;
+import com.yf.auth.entity.SysMenuEntity;
 import com.yf.auth.service.SysMenuService;
 import com.yf.utils.common.CommonUtils;
 import com.yf.utils.constant.MsgConstant;

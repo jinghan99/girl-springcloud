@@ -1,7 +1,7 @@
 package com.yf.auth.service.impl;
 
 import com.yf.auth.dao.SysLogMapper;
-import com.yf.auth.entiy.SysLogEntity;
+import com.yf.auth.entity.SysLogEntity;
 import com.yf.auth.service.SysLogService;
 import com.yf.utils.common.CommonUtils;
 import com.yf.utils.entiy.Page;

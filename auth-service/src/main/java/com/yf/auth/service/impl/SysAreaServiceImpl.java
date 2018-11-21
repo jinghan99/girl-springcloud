@@ -1,7 +1,7 @@
 package com.yf.auth.service.impl;
 
 import com.yf.auth.dao.SysAreaMapper;
-import com.yf.auth.entiy.SysAreaEntity;
+import com.yf.auth.entity.SysAreaEntity;
 import com.yf.auth.service.SysAreaService;
 import com.yf.utils.common.CommonUtils;
 import com.yf.utils.constant.MsgConstant;

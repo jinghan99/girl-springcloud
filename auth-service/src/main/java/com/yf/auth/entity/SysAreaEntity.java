@@ -1,4 +1,4 @@
-package com.yf.auth.entiy;
+package com.yf.auth.entity;
 
 
 

@@ -1,6 +1,6 @@
 package com.yf.auth.dao;
 
-import com.yf.auth.entiy.SysUserEntity;
+import com.yf.auth.entity.SysUserEntity;
 import com.yf.utils.entiy.Query;
 import org.apache.ibatis.annotations.Mapper;
 

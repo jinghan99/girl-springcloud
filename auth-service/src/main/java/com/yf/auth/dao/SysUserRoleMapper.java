@@ -1,6 +1,6 @@
 package com.yf.auth.dao;
 
-import com.yf.auth.entiy.SysUserRoleEntity;
+import com.yf.auth.entity.SysUserRoleEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

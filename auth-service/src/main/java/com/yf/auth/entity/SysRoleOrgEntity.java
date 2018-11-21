@@ -1,17 +1,17 @@
-package com.yf.auth.entiy;
+package com.yf.auth.entity;
 
 
 import java.io.Serializable;
 
 /**
- * 用户与角色对应关系
+ * 角色与机构对应关系
  *
  * @author ZhouChenglin
  * @email yczclcn@163.com
  * @url www.chenlintech.com
- * @date 2017年8月10日 上午10:48:55
+ * @date 2017年8月17日 上午10:36:09
  */
-public class SysUserRoleEntity implements Serializable {
+public class SysRoleOrgEntity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -21,16 +21,16 @@ public class SysUserRoleEntity implements Serializable {
 	private Long id;
 
 	/**
-	 * 用户id
-	 */
-	private Long userId;
-
-	/**
-	 * 角色id
+	 * 角色ID
 	 */
 	private Long roleId;
 
-	public SysUserRoleEntity() {
+	/**
+	 * 机构ID
+	 */
+	private Long orgId;
+
+	public SysRoleOrgEntity() {
 		super();
 	}
 
@@ -42,14 +42,6 @@ public class SysUserRoleEntity implements Serializable {
 		this.id = id;
 	}
 
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
 	public Long getRoleId() {
 		return roleId;
 	}
@@ -57,5 +49,13 @@ public class SysUserRoleEntity implements Serializable {
 	public void setRoleId(Long roleId) {
 		this.roleId = roleId;
 	}
-	
+
+	public Long getOrgId() {
+		return orgId;
+	}
+
+	public void setOrgId(Long orgId) {
+		this.orgId = orgId;
+	}
+
 }

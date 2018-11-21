@@ -1,7 +1,7 @@
 package com.yf.auth.service.impl;
 
 import com.yf.auth.dao.SysMacroMapper;
-import com.yf.auth.entiy.SysMacroEntity;
+import com.yf.auth.entity.SysMacroEntity;
 import com.yf.auth.service.SysMacroService;
 import com.yf.utils.common.CommonUtils;
 import com.yf.utils.constant.MsgConstant;

@@ -1,6 +1,6 @@
 package com.yf.auth.dao;
 
-import com.yf.auth.entiy.SysLogEntity;
+import com.yf.auth.entity.SysLogEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 

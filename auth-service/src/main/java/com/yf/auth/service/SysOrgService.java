@@ -1,7 +1,7 @@
 package com.yf.auth.service;
 
 
-import com.yf.auth.entiy.SysOrgEntity;
+import com.yf.auth.entity.SysOrgEntity;
 import com.yf.utils.entiy.R;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.yf.auth.entiy;
+package com.yf.auth.entity;
 
 /**
  * 代码生成器请求参数
