@@ -3,7 +3,7 @@
 
 <mapper namespace="com.yf.auth.dao.SysRoleMapper">
 	
-	<select id="list" resultType="com.yf.auth.entiy.SysRoleEntity">
+	<select id="list" resultType="com.yf.auth.entity.SysRoleEntity">
 		SELECT
 			role_id,
 			role_name
@@ -13,7 +13,7 @@
 			role_id ASC
 	</select>
 	
-	<select id="listForPage" resultType="com.yf.auth.entiy.SysRoleEntity">
+	<select id="listForPage" resultType="com.yf.auth.entity.SysRoleEntity">
 		SELECT
 			r.role_id,
 			r.org_id,
@@ -62,7 +62,7 @@
 		)
 	</insert>
 	
-	<select id="getObjectById" resultType="com.yf.auth.entiy.SysRoleEntity">
+	<select id="getObjectById" resultType="com.yf.auth.entity.SysRoleEntity">
 		SELECT
 			r.role_id,
 			r.org_id,

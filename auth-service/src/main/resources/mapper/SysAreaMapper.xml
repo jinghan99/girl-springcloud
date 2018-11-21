@@ -19,7 +19,7 @@
 			)
 	</select>
 	
-	<select id="listAreaByParentCode" resultType="com.yf.auth.entiy.SysAreaEntity">
+	<select id="listAreaByParentCode" resultType="com.yf.auth.entity.SysAreaEntity">
 		SELECT
 			a.area_id,
 			a.area_code,
@@ -76,7 +76,7 @@
 		)
 	</insert>
 	
-	<select id="getObjectById" resultType="com.yf.auth.entiy.SysAreaEntity">
+	<select id="getObjectById" resultType="com.yf.auth.entity.SysAreaEntity">
 		SELECT
 			a.area_id,
 			a.area_code,

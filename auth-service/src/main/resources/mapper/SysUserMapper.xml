@@ -3,7 +3,7 @@
 
 <mapper namespace="com.yf.auth.dao.SysUserMapper">
 	
-	<select id="listForPage" resultType="com.yf.auth.entiy.SysUserEntity">
+	<select id="listForPage" resultType="com.yf.auth.entity.SysUserEntity">
 		SELECT
 			u.user_id,
 			u.org_id,
@@ -37,7 +37,7 @@
 			u.user_id DESC
 	</select>
 	
-	<select id="getByUserName" resultType="com.yf.auth.entiy.SysUserEntity">
+	<select id="getByUserName" resultType="com.yf.auth.entity.SysUserEntity">
 		SELECT
 			user_id,
 			username,
@@ -71,7 +71,7 @@
 			ur.user_id = #{userId}
 	</select>
 	
-	<insert id="save" parameterType="com.yf.auth.entiy.SysUserEntity" useGeneratedKeys="true" keyProperty="userId">
+	<insert id="save" parameterType="com.yf.auth.entity.SysUserEntity" useGeneratedKeys="true" keyProperty="userId">
 		INSERT INTO sys_user (
 			username,
 			password,
@@ -94,7 +94,7 @@
 		)
 	</insert>
 	
-	<select id="getObjectById" resultType="com.yf.auth.entiy.SysUserEntity">
+	<select id="getObjectById" resultType="com.yf.auth.entity.SysUserEntity">
 		SELECT
 			u.user_id,
 			u.org_id,

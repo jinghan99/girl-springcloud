@@ -12,7 +12,7 @@
 			parent_id = #{value}
 	</select>
 	
-	<select id="list" resultType="com.yf.auth.entiy.SysMenuEntity">
+	<select id="list" resultType="com.yf.auth.entity.SysMenuEntity">
 		SELECT
 			m.menu_id,
 			m.parent_id,
@@ -36,7 +36,7 @@
 			m.order_num ASC
 	</select>
 	
-	<select id="listNotButton" resultType="com.yf.auth.entiy.SysMenuEntity">
+	<select id="listNotButton" resultType="com.yf.auth.entity.SysMenuEntity">
 		SELECT
 			menu_id,
 			parent_id,
@@ -51,7 +51,7 @@
 			order_num ASC
 	</select>
 	
-	<select id="listParentId" resultType="com.yf.auth.entiy.SysMenuEntity">
+	<select id="listParentId" resultType="com.yf.auth.entity.SysMenuEntity">
 		SELECT
 			menu_id,
 			parent_id,
@@ -89,7 +89,7 @@
 		)
 	</insert>
 	
-	<select id="getObjectById" resultType="com.yf.auth.entiy.SysMenuEntity">
+	<select id="getObjectById" resultType="com.yf.auth.entity.SysMenuEntity">
 		SELECT
 			m.menu_id,
 			m.parent_id,

@@ -3,7 +3,7 @@
 
 <mapper namespace="com.yf.auth.dao.SysLogMapper">
 	
-	<select id="listForPage" resultType="com.yf.auth.entiy.SysLogEntity">
+	<select id="listForPage" resultType="com.yf.auth.entity.SysLogEntity">
 		SELECT
 			id,
 			user_id,
