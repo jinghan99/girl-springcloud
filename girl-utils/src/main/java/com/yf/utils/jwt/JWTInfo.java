@@ -48,22 +48,22 @@ public class JWTInfo implements UserDetails, Serializable {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 
     public void setUsername(String username) {
@@ -78,36 +78,4 @@ public class JWTInfo implements UserDetails, Serializable {
         this.userId = userId;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-
-        JWTInfo jwtInfo = (JWTInfo) o;
-
-        if (username != null ? !username.equals(jwtInfo.username) : jwtInfo.username != null) {
-            return false;
-        }
-        return userId != null ? userId.equals(jwtInfo.userId) : jwtInfo.userId == null;
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = username != null ? username.hashCode() : 0;
-        result = 31 * result + (userId != null ? userId.hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "JWTInfo{" +
-                "username='" + username + '\'' +
-                ", userId='" + userId + '\'' +
-                '}';
-    }
 }

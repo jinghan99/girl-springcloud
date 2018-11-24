@@ -1,13 +1,16 @@
-package com.yf.sysuser.service.impl;
+package com.yf.auth.service.impl;
 
-import com.yf.sysuser.dao.SysUserMapper;
-import com.yf.sysuser.entity.SysUserEntity;
-import com.yf.sysuser.factory.JwtUserFactory;
-import com.yf.sysuser.service.SysUserService;
+import com.yf.auth.dao.SysUserMapper;
+import com.yf.auth.entity.SysUserEntity;
+import com.yf.auth.factory.JwtUserFactory;
+import com.yf.auth.service.SysUserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,12 +25,19 @@ import java.util.Set;
 @Service("userDetailsService")
 public class JwtUserDetailsServiceImpl implements UserDetailsService {
 
+    /**
+     * 日志
+     */
+    protected Logger        logger = LoggerFactory.getLogger(getClass());
+
     @Autowired
-    private SysUserMapper sysUserMapper;
+    private   SysUserMapper sysUserMapper;
 
     @Autowired
     private SysUserService sysUserService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -35,10 +45,14 @@ public class JwtUserDetailsServiceImpl implements UserDetailsService {
         Set<String> roleList =sysUserService.listUserRoles(user.getUserId());
         if (user == null) {
             throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
-        } else {
-            // 角色保存至 jwt token
-            user.setRoleSignList(new ArrayList<>(roleList));
-            return JwtUserFactory.create(user);
         }
+
+        String password = passwordEncoder.encode("123456");
+
+        logger.info("password: {}", password);
+
+        // 角色保存至 jwt token
+        user.setRoleSignList(new ArrayList<>(roleList));
+        return JwtUserFactory.create(user);
     }
 }

@@ -12,8 +12,16 @@ import com.yf.utils.constant.SystemConstant;
 import com.yf.utils.entiy.Page;
 import com.yf.utils.entiy.Query;
 import com.yf.utils.entiy.R;
+import com.yf.utils.jwt.JWTHelper;
+import com.yf.utils.jwt.JWTInfo;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -38,11 +46,11 @@ public class SysUserServiceImpl implements SysUserService {
 	private SysUserRoleMapper sysUserRoleMapper;
 
 //	security  授权
-//	@Autowired
-//	private UserDetailsService userDetailsService;
-//
-//	@Autowired
-//	private AuthenticationManager authenticationManager;
+	@Autowired
+	private UserDetailsService userDetailsService;
+
+	@Autowired
+	private AuthenticationManager authenticationManager;
 
 	/**
 	 * 分页查询用户列表
@@ -59,11 +67,12 @@ public class SysUserServiceImpl implements SysUserService {
 
 	@Override
 	public String login(String username, String password) {
-//		UsernamePasswordAuthenticationToken upToken = new UsernamePasswordAuthenticationToken(username, password);
-//		Authentication authentication = authenticationManager.authenticate(upToken);
-//		SecurityContextHolder.getContext().setAuthentication(authentication);
-//		UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-		return "";
+		UsernamePasswordAuthenticationToken upToken = new UsernamePasswordAuthenticationToken(username, password);
+		Authentication authentication = authenticationManager.authenticate(upToken);
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+
+		return JWTHelper.generateToken((JWTInfo) userDetails,30*60);
 	}
 
 	/**
