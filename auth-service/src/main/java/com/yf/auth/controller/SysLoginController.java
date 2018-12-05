@@ -33,14 +33,6 @@ public class SysLoginController extends AbstractController {
 		return R.error("跳转到登录页面");
 	}
 	
-	/**
-	 * 登录
-	 */
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public R login(String username, String password) {
-		String token = sysUserService.login(username,password);
-		return CommonUtils.msg(token);
-	}
 
 	/**
 	 * 跳转后台控制台

@@ -1,5 +1,7 @@
 package com.yf.utils.entiy;
 
+import com.google.gson.Gson;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,6 +57,10 @@ public class R extends HashMap<String, Object> {
     }
 	public static R ok() {
 		return new R();
+	}
+
+	public  String toJson(){
+		return new Gson().toJson(this);
 	}
 
 	@Override

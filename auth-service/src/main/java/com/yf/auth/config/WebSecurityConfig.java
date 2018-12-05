@@ -1,7 +1,9 @@
 package com.yf.auth.config;
 
-import com.yf.auth.handler.MyAuthenctiationFailureHandler;
-import com.yf.auth.handler.MyAuthenctiationSuccessHandler;
+import com.yf.auth.security.CustomAccessDeniedHandler;
+import com.yf.auth.security.JwtAuthenticationTokenFilter;
+import com.yf.auth.security.MyAuthenticationFailureHandler;
+import com.yf.auth.security.MyAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +19,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * @Package com.yf.config
@@ -30,8 +33,6 @@ configure(HttpSecurity http)方法
 通过authorizeRequests()定义哪些URL需要被保护、哪些不需要被保护。
 例如以上代码指定了/和/home不需要任何认证就可以访问，其他的路径都必须通过身份验证。
 通过formLogin()定义当需要用户登录时候，转到的登录页面。
-configureGlobal(AuthenticationManagerBuilder auth)方法，
-在内存中创建了一个用户，该用户的名称为user，密码为password，用户角色为USER。
  */
 @Configuration
 @EnableWebSecurity  //启动web安全性
@@ -43,10 +44,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
 
     @Autowired
-    private MyAuthenctiationFailureHandler myAuthenctiationFailureHandler;
+    private MyAuthenticationFailureHandler myAuthenticationFailureHandler;
 
     @Autowired
-    private MyAuthenctiationSuccessHandler myAuthenctiationSuccessHandler;
+    private MyAuthenticationSuccessHandler myAuthenticationSuccessHandler;
+
+    @Autowired
+    private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
+
+    @Autowired
+    private CustomAccessDeniedHandler customAccessDeniedHandler;
 
     // 装载BCrypt密码编码器
     @Bean
@@ -77,17 +84,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity
                 // 由于使用的是JWT，我们这里不需要csrf
                 .csrf().disable()
-
                 // 基于token，所以不需要session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .formLogin()          // 定义当需要用户登录时候，转到的登录页面。
                     .loginPage("/auth/toLogin")      // 设置登录页面
                     .loginProcessingUrl("/auth/login")
-                    .successHandler(myAuthenctiationSuccessHandler)
-                    .failureHandler(myAuthenctiationFailureHandler)// 自定义的登录接口
+                    .successHandler(myAuthenticationSuccessHandler)
+                    .failureHandler(myAuthenticationFailureHandler)// 自定义的登录接口
                     .and()
                 .authorizeRequests()
-                    //.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                     // 允许对于网站静态资源的无授权访问
                     .antMatchers(
                             HttpMethod.GET,
@@ -100,10 +105,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     ).permitAll()
                     // 对于获取token的rest api要允许匿名访问
                     .antMatchers("/auth/**").permitAll()
-
                     // 除上面外的所有请求全部需要鉴权认证
-                    .anyRequest().authenticated();
+                    .anyRequest()
+                    .access("@authorityRBACService.hasPermission(request,authentication)") ;// RBAC 动态 url 认证
+//        security  之前 检测token
+        httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
 
+        httpSecurity.exceptionHandling().accessDeniedHandler(customAccessDeniedHandler); // 无权访问 JSON 格式的数据
 
         // 禁用缓存
         httpSecurity.headers().cacheControl();

@@ -36,6 +36,16 @@ public interface SysRoleService {
 	R getRoleById(Long id);
 
 	/**
+	 * 依据 角色标识 查询角色 url 集合
+	 * TODO 后期这里加 缓存  使用频率高
+	 * @param sign
+	 * @return
+	 */
+	SysRoleEntity getRoleBySign(String sign);
+
+
+
+	/**
 	 * 修改角色
 	 * @param role
 	 * @return

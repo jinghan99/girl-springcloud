@@ -33,5 +33,12 @@ public interface SysRoleMenuMapper extends BaseMapper<SysRoleMenuEntity> {
 	 * @return
 	 */
 	List<Long> listMenuId(Long id);
+
+	/**
+	 * 查询角色 所有 URL 集合
+	 * @param id
+	 * @return
+	 */
+	List<String> listMenuUrl(Long id);
 	
 }

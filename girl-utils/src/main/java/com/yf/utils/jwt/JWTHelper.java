@@ -4,21 +4,26 @@ import com.alibaba.druid.util.Utils;
 import com.yf.utils.common.StringUtil;
 import com.yf.utils.constant.BizConstant;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.apache.commons.codec.binary.Base64;
 import org.joda.time.DateTime;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
+import java.util.Date;
 
 /**
  * JWT 帮助类
  */
 public class JWTHelper {
 
+    /**
+     * 时间颗粒度 秒
+     */
     private static final int EXPIRE = 30*60;
+
 
     //生成签名的时候使用的秘钥secret,这个方法本地封装了的，一般可以从本地配置文件中读取，切记这个秘钥不能外露哦。
     // 它就是你服务端的私钥，在任何场景都不应该流露出去。一旦客户端得知这个secret, 那就意味着客户端是可以自我签发jwt了。
@@ -42,6 +47,7 @@ public class JWTHelper {
 
         return key;
     }
+
 
     /**
      * 生成token
@@ -73,10 +79,10 @@ public class JWTHelper {
      * @return
      * @throws Exception
      */
-    public static Jws<Claims> parserToken(String token){
-        Jws<Claims> claimsJws = Jwts.parser().setSigningKey(generalKey()).parseClaimsJws(token);
-        return claimsJws;
+    public static Claims parserToken(String token){
+        return Jwts.parser().setSigningKey(generalKey()).parseClaimsJws(token).getBody();
     }
+
     /**
      * 公钥解析token 获取token中的用户信息
      * @param token
@@ -85,8 +91,7 @@ public class JWTHelper {
      */
     public static JWTInfo getInfoFromToken(String token){
         try {
-            Jws<Claims> claimsJws = parserToken(token);
-            Claims body = claimsJws.getBody();
+            Claims body = parserToken(token);
             return new JWTInfo(body.getSubject(), StringUtil.nullToString(body.get(BizConstant.JWT_KEY_USER_ID.getValue())),
                     StringUtil.nullToString(body.get(BizConstant.JWT_PASSWORD.getValue())));
         } catch (Exception e) {
@@ -95,7 +100,50 @@ public class JWTHelper {
 
     }
 
-    public static void main(String[] args) {
+    public static String getUsernameFromToken(String token){
+        try {
+            Claims body = parserToken(token);
+            return new JWTInfo(body.getSubject(), StringUtil.nullToString(body.get(BizConstant.JWT_KEY_USER_ID.getValue())),
+                    StringUtil.nullToString(body.get(BizConstant.JWT_PASSWORD.getValue()))).getUsername();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+
+
+    /**
+     * 判断令牌是否过期
+     *
+     * @param token 令牌
+     * @return 是否过期
+     */
+    public static Boolean isTokenExpired(String token) {
+        try {
+            Claims claims = parserToken(token);
+            Date expiration = claims.getExpiration();
+            return expiration.before(new Date());
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    /**
+     * 验证令牌
+     *
+     * @param token       令牌
+     * @param userDetails 用户
+     * @return 是否有效
+     */
+    public static Boolean validateToken(String token, UserDetails userDetails) {
+        JWTInfo user = (JWTInfo) userDetails;
+        String username = getInfoFromToken(token).getUsername();
+        return (username.equals(user.getUsername()) && !isTokenExpired(token));
+    }
+
+
+
+    public static void main(String[] args) throws Exception {
         String token = generateToken(new JWTInfo("jinghan","123","admin"), 123);
 
         System.out.println("token: "+token);

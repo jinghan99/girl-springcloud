@@ -1,5 +1,12 @@
+
+
+# Tomcat
 server:
-   port: 8796
+  tomcat:
+      uri-encoding: UTF-8
+      max-threads: 1000
+      min-spare-threads: 30
+  port: 8796
 #   指定服务注册中心
 eureka:
   client:
@@ -7,12 +14,16 @@ eureka:
         defaultZone: http://localhost:8761/eureka/
 # 服务名称
 spring:
+  http:
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
   application:
     name: user-service
   # 环境 sit:集成测试环境|pre:预生产环境|prd:生成环境
   profiles:
     active: dev
-
 
 jwt:
   header: token

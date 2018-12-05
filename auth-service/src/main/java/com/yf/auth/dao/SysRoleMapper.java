@@ -19,5 +19,7 @@ public interface SysRoleMapper extends BaseMapper<SysRoleEntity> {
 	 * @return
 	 */
 	List<String> listUserRoles(Long userId);
-	
+
+
+	SysRoleEntity getBySign(String roleSign);
 }

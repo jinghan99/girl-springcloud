@@ -53,6 +53,11 @@ public class SysRoleEntity implements Serializable {
 	private Long userIdCreate;
 	
 	private List<Long> menuIdList;
+
+	/**
+	 * url 集合
+	 */
+	private List<String> menuUrlList;
 	
 	private List<Long> orgIdList;
 	
@@ -157,5 +162,12 @@ public class SysRoleEntity implements Serializable {
 	public void setGmtModified(Timestamp gmtModified) {
 		this.gmtModified = gmtModified;
 	}
-	
+
+	public List<String> getMenuUrlList() {
+		return menuUrlList;
+	}
+
+	public void setMenuUrlList(List<String> menuUrlList) {
+		this.menuUrlList = menuUrlList;
+	}
 }

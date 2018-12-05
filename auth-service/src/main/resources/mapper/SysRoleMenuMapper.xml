@@ -25,6 +25,16 @@
 		WHERE
 			role_id = #{id}
 	</select>
+
+	<select id="listMenuUrl" resultType="string">
+		SELECT
+			m.url
+		FROM
+			sys_role_menu rm
+		LEFT JOIN sys_menu m ON m.menu_id = rm.menu_id
+		WHERE
+			role_id = #{id}
+	</select>
 	
 	<delete id="batchRemoveByMenuId">
 		DELETE

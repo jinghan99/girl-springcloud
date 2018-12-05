@@ -44,12 +44,10 @@ public class JwtUserDetailsServiceImpl implements UserDetailsService {
         SysUserEntity user = sysUserMapper.getByUserName(username);
         Set<String> roleList =sysUserService.listUserRoles(user.getUserId());
         if (user == null) {
-            throw new UsernameNotFoundException(String.format("No user found with username '%s'.", username));
+            throw new UsernameNotFoundException("用户名不对");
         }
-
-        String password = passwordEncoder.encode("123456");
-
-        logger.info("password: {}", password);
+//        String password = passwordEncoder.encode("123456");
+//        logger.info("password: {}", password);
 
         // 角色保存至 jwt token
         user.setRoleSignList(new ArrayList<>(roleList));

@@ -23,6 +23,7 @@ public class JwtUserFactory {
     }
 
     private static List<GrantedAuthority> mapToGrantedAuthorities(List<String> authorities) {
+        //将与用户类一对多的角色类的名称集合转换为 GrantedAuthority 集合
         return authorities.stream()
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());

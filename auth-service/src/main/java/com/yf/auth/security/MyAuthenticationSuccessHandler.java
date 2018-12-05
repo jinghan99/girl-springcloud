@@ -1,6 +1,9 @@
-package com.yf.auth.handler;
+package com.yf.auth.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.yf.utils.entiy.R;
+import com.yf.utils.jwt.JWTHelper;
+import com.yf.utils.jwt.JWTInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +23,7 @@ import java.io.IOException;
  * @date 2018/11/24 15:50
  */
 @Component("myAuthenctiationSuccessHandler")
-public class MyAuthenctiationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+public class MyAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
     /**
      * 日志
@@ -35,9 +38,11 @@ public class MyAuthenctiationSuccessHandler extends SimpleUrlAuthenticationSucce
                                         Authentication authentication) throws IOException, ServletException {
 
         logger.info("登录成功");
-
+        JWTInfo userDetails = (JWTInfo) authentication.getPrincipal();
         response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().write(objectMapper.writeValueAsString(authentication));
+        response.setCharacterEncoding("UTF-8");
+//        登录成功 jwt 生成
+        response.getWriter().write(R.ok(JWTHelper.generateToken(userDetails,30*60)).toJson());
     }
 }
 

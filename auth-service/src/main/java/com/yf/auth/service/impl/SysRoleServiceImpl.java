@@ -74,6 +74,16 @@ public class SysRoleServiceImpl implements SysRoleService {
 		return CommonUtils.msg(role);
 	}
 
+	@Override
+	public SysRoleEntity getRoleBySign(String sign) {
+		SysRoleEntity role = sysRoleMapper.getBySign(sign);
+		List<String> menuUrl = sysRoleMenuMapper.listMenuUrl(role.getRoleId());
+		List<Long> orgId = sysRoleOrgMapper.listOrgId(role.getRoleId());
+		role.setMenuUrlList(menuUrl);
+		role.setOrgIdList(orgId);
+		return role;
+	}
+
 	/**
 	 * 修改角色
 	 * @param role

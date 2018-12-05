@@ -1,5 +1,10 @@
 server:
    port: 8796
+   # Tomcat
+   tomcat:
+       uri-encoding: UTF-8
+       max-threads: 1000
+       min-spare-threads: 30
 #   指定服务注册中心
 eureka:
   client:
@@ -33,6 +38,11 @@ management:
 
 # 服务名称
 spring:
+  http:
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
   application:
     name: user-service
   redis:
@@ -60,7 +70,6 @@ spring:
 
 jwt:
   header: token
-  tokenHead: Bearer
 
 # Mybatis配置
 mybatis:

@@ -82,6 +82,27 @@
 		WHERE
 			r.role_id = #{roleId}
 	</select>
+
+	<select id="getBySign" resultType="com.yf.auth.entity.SysRoleEntity">
+		SELECT
+			r.role_id,
+			r.org_id,
+			(
+				SELECT
+					name
+				FROM
+					sys_org o
+				WHERE
+					o.org_id = r.org_id
+			) AS orgName,
+			r.role_name,
+			r.role_sign,
+			r.remark
+		FROM
+			sys_role r
+		WHERE
+			r.role_sign = #{roleSign}
+	</select>
 	
 	<update id="update">
 		UPDATE sys_role
