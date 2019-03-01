@@ -6,7 +6,7 @@ spring:
     name: order-service
   redis:
     database: 0
-    host: 106.12.101.177
+    host: jinghan.club
     port: 6379
     password:     # 密码（默认为空）
     timeout: 2s  # 数据库连接超时时间，2.0 中该参数的类型为Duration，这里在配置的时候需要指明单位
@@ -18,17 +18,17 @@ spring:
         min-idle: 5       # 连接池中的最小空闲连接
   #zipkin服务所在地址
   zipkin:
-    base-url: http://106.12.101.177:9411/   #后期 部署改为内网ip
+    base-url: http://jinghan.club:9411/   #后期 部署改为内网ip
 #配置采样百分比,开发环境可以设置为1，表示全部，生产就用默认
   sleuth:
     sampler:
       probability: 1
 
-#   指定服务注册中心
+#   指定多个 服务注册中心
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
 
 #自定义负载均衡策略
 #product-service:
