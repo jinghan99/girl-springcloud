@@ -26,6 +26,8 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
             response.sendError(403);
             response.getWriter().write(R.error(403,"无权限访问!").toJson());
         } else if (!response.isCommitted()) {// 非AJAX请求，跳转系统默认的403错误界面，在web.xml中配置
+
+            response.sendRedirect("/view/error/403.jsp");
             response.getWriter().write(R.error(403,"无权限访问! 跳转 无权限访问界面").toJson());
         }
     }

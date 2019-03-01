@@ -28,6 +28,7 @@ public class AuthorityRBACService {
     private SysRoleService sysRoleService;
 
     public boolean hasPermission(HttpServletRequest request, Authentication authentication) {
+        //相信jwt  token别人无法改签
         Object userInfo = authentication.getPrincipal();
 
         boolean hasPermission  = false;

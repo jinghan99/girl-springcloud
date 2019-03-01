@@ -108,10 +108,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     // 除上面外的所有请求全部需要鉴权认证
                     .anyRequest()
                     .access("@authorityRBACService.hasPermission(request,authentication)") ;// RBAC 动态 url 认证
-//        security  之前 检测token
+        //security  之前 检测token
         httpSecurity.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class);
-
-        httpSecurity.exceptionHandling().accessDeniedHandler(customAccessDeniedHandler); // 无权访问 JSON 格式的数据
+        // 无权访问处理
+        httpSecurity.exceptionHandling().accessDeniedHandler(customAccessDeniedHandler);
 
         // 禁用缓存
         httpSecurity.headers().cacheControl();
