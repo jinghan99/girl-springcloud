@@ -4,9 +4,6 @@ spring:
   profiles :  peerl
   application :
   name :  eureka-server-peer
-server:
-   port: 8762
-
 eureka:
   instance:
       hostname: peer2

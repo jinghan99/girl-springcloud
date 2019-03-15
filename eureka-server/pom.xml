@@ -27,6 +27,8 @@
     </properties>
 
     <dependencies>
+
+        <!--Eureka服务端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>

@@ -14,7 +14,7 @@ spring:
     name: common-service
   redis:
     database: 0
-    host: 106.12.101.177
+    host: jinghan.club
     port: 6379
     password:     # 密码（默认为空）
     timeout: 2s  # 数据库连接超时时间，2.0 中该参数的类型为Duration，这里在配置的时候需要指明单位

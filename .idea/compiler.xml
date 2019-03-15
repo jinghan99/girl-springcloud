@@ -21,14 +21,15 @@
         <module name="product_service" />
         <module name="user-service" />
         <module name="user_service" />
+        <module name="video-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="api-gateway" target="1.8" />
+      <module name="api-gateway" target="1.5" />
       <module name="auth-service" target="1.8" />
       <module name="common" target="1.8" />
-      <module name="common-service" target="1.8" />
-      <module name="config-server" target="1.8" />
+      <module name="common-service" target="1.5" />
+      <module name="config-server" target="1.5" />
       <module name="config-service" target="1.8" />
       <module name="demo" target="1.8" />
       <module name="eureka-server" target="1.8" />
@@ -39,12 +40,13 @@
       <module name="girl-utils" target="1.8" />
       <module name="order-service" target="1.8" />
       <module name="order_service" target="1.8" />
-      <module name="product-service" target="1.8" />
+      <module name="product-service" target="1.5" />
       <module name="product_service" target="1.8" />
       <module name="test-demo" target="1.8" />
       <module name="test-demo (1)" target="1.8" />
       <module name="user-service" target="1.8" />
       <module name="user_service" target="1.8" />
+      <module name="video-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
