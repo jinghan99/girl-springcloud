@@ -40,7 +40,6 @@ public class RedisConfig {
                 .cacheDefaults(config)
                 .transactionAware()
                 .build();
-        System.out.println("自定义RedisCacheManager加载完成");
 
         return redisCacheManager;
     }
