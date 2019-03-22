@@ -70,6 +70,13 @@ spring:
 
 jwt:
   header: token
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+    hibernate: DEBUG
+  path: concretepage/logs
 
 # Mybatis配置
 mybatis:

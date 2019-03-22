@@ -29,13 +29,13 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
         registry.addMapping("/**").allowedOrigins("*").allowedMethods("*").allowCredentials(true);
     }
 
-//    配置本地文件访问
+    //    配置本地文件访问
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        if(!registry.hasMappingForPattern("/static/**")){
-            registry.addResourceHandler("/static/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX+"/static/");
+        if (!registry.hasMappingForPattern("/static/**")) {
+            registry.addResourceHandler("/static/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX + "/static/");
         }
         //注意前面要加file,不然是访问不了的
-        registry.addResourceHandler("/upload/**").addResourceLocations( ResourceUtils.FILE_URL_PREFIX+ myConst.getDownloadpath());
+        registry.addResourceHandler("/upload/**").addResourceLocations(ResourceUtils.FILE_URL_PREFIX + myConst.getDownloadpath());
     }
 }

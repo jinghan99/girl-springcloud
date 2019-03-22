@@ -8,7 +8,8 @@ server:
 
 
 file:
-  download_path: /downloads
+  download_path: /downloads/
+#  download_path: D:\images\
 
 spring:
   application:
@@ -28,5 +29,5 @@ spring:
         max-idle: 10      # 连接池中的最大空闲连接
         min-idle: 5       # 连接池中的最小空闲连接
 logging:
-  path: /downloads
+  path:  /downloads/
 
