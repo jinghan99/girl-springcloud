@@ -83,10 +83,10 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid-spring-boot-starter</artifactId>
-			<version>${druid-version}</version>
-		</dependency>
+		<groupId>com.alibaba</groupId>
+		<artifactId>druid-spring-boot-starter</artifactId>
+		<version>${druid-version}</version>
+	</dependency>
 		<!--spring boot starter结束-->
 
 		<!--spring cloud 开始-->

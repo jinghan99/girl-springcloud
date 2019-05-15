@@ -26,11 +26,6 @@ public class RedisConfig {
     }
 
 
-//    @Bean
-//    public CacheManager cacheManager(RedisConnectionFactory factory) {
-//        RedisCacheManager cacheManager = RedisCacheManager.create(factory);
-//        return cacheManager;
-//    }
 
     @Bean
     public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
@@ -57,36 +52,17 @@ public class RedisConfig {
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new JdkSerializationRedisSerializer());
         redisTemplate.setHashKeySerializer(new StringRedisSerializer());
         redisTemplate.setHashValueSerializer(new StringRedisSerializer());
-        redisTemplate.setValueSerializer(new JdkSerializationRedisSerializer());
         redisTemplate.setConnectionFactory(factory);
         return redisTemplate;
     }
-
     @Bean
-    public HashOperations<String, String, Object> hashOperations(RedisTemplate<String, Object> redisTemplate) {
-        return redisTemplate.opsForHash();
-    }
-
-    @Bean
-    public ValueOperations<String, String> valueOperations(RedisTemplate<String, String> redisTemplate) {
-        return redisTemplate.opsForValue();
-    }
-
-    @Bean
-    public ListOperations<String, Object> listOperations(RedisTemplate<String, Object> redisTemplate) {
-        return redisTemplate.opsForList();
-    }
-
-    @Bean
-    public SetOperations<String, Object> setOperations(RedisTemplate<String, Object> redisTemplate) {
-        return redisTemplate.opsForSet();
-    }
-
-    @Bean
-    public ZSetOperations<String, Object> zSetOperations(RedisTemplate<String, Object> redisTemplate) {
-        return redisTemplate.opsForZSet();
+    public RedisTemplate<String, String> stringRedisTemplate(RedisConnectionFactory factory) {
+        StringRedisTemplate template = new StringRedisTemplate();
+        template.setConnectionFactory(factory);
+        return template;
     }
 
     private RedisSerializer<String> keySerializer() {
